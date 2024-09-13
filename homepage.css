@@ -284,6 +284,7 @@ nav .fa-solid{
   max-width: 100%;
   margin: auto;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 @media(max-width: 800px){
   .header{
