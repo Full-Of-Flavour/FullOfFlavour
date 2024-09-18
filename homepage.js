@@ -1,3 +1,4 @@
+
 let toggleMenu = document.getElementById("navLinks")
 function showMenu() {
   toggleMenu.style.top = "0"
@@ -22,9 +23,22 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { 
   var calendarEl = document.getElementById('calendar');
+
+  // Function to generate events across multiple years
+  function generateYearlyEvents(baseEvent, startYear, endYear) {
+    let events = [];
+    for (let year = startYear; year <= endYear; year++) {
+      let event = Object.assign({}, baseEvent); // Clone the base event
+      event.start = year + baseEvent.start.substr(0); // Adjust the year of the event
+      if (baseEvent.end) {
+        event.end = year + baseEvent.end.substr(0); // Adjust the year for the end date if it exists
+      }
+      events.push(event);
+    }
+    return events;
+  }
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth', // Month view by default
@@ -34,21 +48,21 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
     events: [
-      {
+      ...generateYearlyEvents({
         title: 'Eid-Malud Holiday',
-        start: '2024-09-16',
+        start: '-09-16',
         allDay: true
-      },
-      {
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: 'Independence Day 💚🤍💚',
-        start: '2024-10-01',
+        start: '-10-01',
         allDay: true
-      },
-      {
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: 'National Day @ ICEL',
-        start: '2024-10-02',
+        start: '-10-02',
         allDay: true
-      },
+      }, 2023, 2030),
       {
         title: 'Monthly HSE Meeting 📃',
         start: '2024-09-30T13:00:00',
@@ -57,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         title: 'Monthly HSE Meeting 📃',
         start: '2024-10-28T13:00:00',
-        end: '2024-10-28T14:00:00',
+        end: '2024-09-28T14:00:00',
       },
       {
         title: 'Monthly HSE Meeting 📃',
@@ -65,195 +79,186 @@ document.addEventListener('DOMContentLoaded', function () {
         end: '2024-11-25T14:00:00',
       },
       {
-        title: 'End of the Year Gift Distribution 🎁',
-        start: '2024-12-11',
-        end: '2024-12-14',
+        title: 'Monthly HSE Meeting 📃',
+        start: '2024-12-30T13:00:00',
+        end: '2024-12-30T14:00:00',
       },
       {
         title: 'Monthly HSE Meeting 📃',
-        start: '2024-12-16T13:00:00',
-        end: '2024-12-16T14:00:00',
+        start: '2025-01-27T13:00:00',
+        end: '2025-01-27T14:00:00',
       },
       {
+        title: 'Monthly HSE Meeting 📃',
+        start: '2025-02-24T13:00:00',
+        end: '2025-02-24T14:00:00',
+      },
+      {
+        title: 'Monthly HSE Meeting 📃',
+        start: '2025-03-31T13:00:00',
+        end: '2025-03-31T14:00:00',
+      },
+      ...generateYearlyEvents({
+        title: 'End of the Year Gift Distribution 🎁',
+        start: '-12-11',
+        end: '-12-14',
+        allDay: true
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: 'End of the Year Celebration/Official Close of business 2024',
-        start: '2024-12-19',
-        end: '2024-12-21',
-      },
-      {
+        start: '-12-19',
+        end: '-12-21',
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: 'Christmas Holiday 🎄🎅🏽',
-        start: '2024-12-23',
-        end: '2024-12-27',
-      },
-      {
+        start: '-12-23',
+        end: '-12-27',
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "New Year's Holiday 🎆✨",
-        start: '2024-12-31',
+        start: '-12-31',
         end: '2025-01-02',
-      },
-      {
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Valentine's Day 💝💘",
-        start: '2025-02-14',
-        allDay: true
-      },
-      {
+        start: '-02-14',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Ash Wednesday",
-        start: '2025-03-05',
-        allDay: true
-      },
-      {
+        start: '-03-05',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Women's Day",
-        start: '2025-03-08',
-        allDay: true
-      },
-      {
+        start: '-03-08',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Good Friday",
-        start: '2025-04-18',
-        allDay: true
-      },
-      {
+        start: '-04-18',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Holy Saturday",
-        start: '2025-04-19',
-        allDay: true
-      },
-      {
+        start: '-04-19',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Easter Sunday",
-        start: '2025-04-20',
-        allDay: true
-      },
-      {
+        start: '-04-21',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Easter Monday",
-        start: '2025-04-21',
-        allDay: true
-      },
-      {
-        title: "Workers' Day 👨🏽‍🏭👮🏽‍♂️",
-        start: '2025-05-01',
-        allDay: true
-      },
-      {
+        start: '-05-01',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Children's Day 👩‍👦",
-        start: '2025-05-27',
-        allDay: true
-      },
-      {
-        title: "Father's Day 👔",
-        start: '2025-06-15',
-        allDay: true
-      },
-      {
-        title: "Mr Adetola's Birthday 🎈🎉",
-        start: '2025-01-20',
-        allDay: true
-      },
-      {
+        start: '-05-27',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
+        title: "Father's Day 👩‍👦",
+        start: '-05-27',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Timothy's Birthday 🎈🎉",
-        start: '2025-02-03',
-        allDay: true
-      },
-      {
+        start: '-02-03',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
+        title: "Mr Adetola's Birthday 🎈🎉",
+        start: '-01-20',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Dapo's Birthday 🎈🎉",
-        start: '2025-06-13',
-        allDay: true
-      },
-      {
+        start: '-06-13',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Ladi's Birthday 🎈🎉",
-        start: '2025-04-17',
-        allDay: true
-      },
-      {
+        start: '-04-17',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Chidi's Birthday 🎈🎉",
-        start: '2024-10-31',
-        allDay: true
-      },
-      {
-        title: "Mr Chidi's Birthday 🎈🎉",
-        start: '2025-10-31',
-        allDay: true
-      },
-      {
+        start: '-10-31',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Gbemis's Birthday 🎈🎉",
-        start: '2025-03-13',
-        allDay: true
-      },
-      {
+        start: '-03-13',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Miss Sandra's Birthday 🎈🎉",
-        start: '2024-12-29',
-        allDay: true
-      },
-      {
-        title: "Miss Sandra's Birthday 🎈🎉",
-        start: '2025-12-29',
-        allDay: true
-      },
-      {
+        start: '-12-29',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mrs Onyinyechi's Birthday 🎈🎉",
-        start: '2024-11-11',
-        allDay: true
-      },
-      {
-        title: "Mrs Onyinyechi's Birthday 🎈🎉",
-        start: '2025-11-11',
-        allDay: true
-      },
-      {
+        start: '-11-11',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Miss Abosede's Birthday 🎈🎉",
-        start: '2025-08-20',
-        allDay: true
-      },
-      {
+        start: '-08-20',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Miss Cecelia's Birthday 🎈🎉",
-        start: '2025-05-06',
-        allDay: true
-      },
-      {
+        start: '-05-06',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Benjamin's Birthday 🎈🎉",
-        start: '2025-05-27',
-        allDay: true
-      },
-      {
+        start: '-05-27',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Joel's Birthday 🎈🎉",
-        start: '2025-01-21',
-        allDay: true
-      },
-      {
+        start: '-01-21',
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Henry's Birthday 🎈🎉",
-        start: '2025-09-20',
-        allDay: true
-      },
-      {
+        start: "-09-20",
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Democracy Day",
-        start: '2025-06-12',
-        allDay: true
-      },
-      {
-        title: "Mr Henry's Birthday 🎈🎉",
-        start: '2024-09-20',
-        allDay: true
-      },
-      {
+        start: "-06-12",
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Itoro's Birthday 🎈🎉",
-        start: '2024-11-18',
-        allDay: true
-      },
-      {
-        title: "Mr Itoro's Birthday 🎈🎉",
-        start: '2025-11-18',
-        allDay: true
-      },
-      {
+        start: "-11-18",
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Bamishaye's Birthday 🎈🎉",
-        start: '2025-06-12',
-        allDay: true
-      },
-      {
+        start: "-06-12",
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Kevin's Birthday 🎈🎉",
-        start: '2025-05-05',
-        allDay: true
-      },
-      {
+        start: "-05-05",
+        allDay: true,
+      }, 2023, 2030),
+      ...generateYearlyEvents({
         title: "Mr Uche's Birthday 🎈🎉",
-        start: '2025-04-02',
-        allDay: true
-      }
+        start: "-04-02",
+        allDay: true,
+      }, 2023, 2030),
+      
+      
+      
+
+      // Add other events here
     ]
   });
 
