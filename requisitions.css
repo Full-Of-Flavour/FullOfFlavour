@@ -39,7 +39,8 @@ body {
 }
 .requisitionForm {
   display: flex;
-  width: 60%;
+  width: 70%;
+  gap: 40px;
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
@@ -59,7 +60,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 36px;
+  font-size: 25px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
@@ -71,5 +72,14 @@ body {
   .requisitionForm{
     flex-direction: column;
     gap: 40px;
+    width: 60%;
+  }
+}
+@media(min-width: 1450px){
+  .requisitionForm{
+    width: 75%;
+  }
+  .purchase-requisition-btn, .other-requisition-btn {
+    font-size: 36px;
   }
 }
