@@ -122,7 +122,7 @@ nav .fa-solid{
   text-align: center;
   margin: 0px;
   margin-top: 50px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 .footer-info{
   width: 100%;
@@ -269,7 +269,7 @@ nav .fa-solid{
   display: none;
   position: fixed; 
   bottom: 5%; 
-  right: 2%; 
+  right: 3%; 
   z-index: 99; 
   border: none;
   outline: none;
@@ -349,7 +349,7 @@ nav .fa-solid{
     margin-top: 30px;
   }
   .footer i:hover{
-    color: white;
+    color:  rgb(22, 182, 102);
     transform: none;
     padding-left: 0px;
   }
@@ -469,6 +469,7 @@ nav .fa-solid{
   }
   .footer{
     margin-top: 70px;
+    margin-bottom: 20px;
   }
   .footer-info{
     font-size: 20px;
