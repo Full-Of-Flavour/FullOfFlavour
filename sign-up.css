@@ -17,6 +17,12 @@ body{
   margin: auto;
   height: 100%;
 }
+}
+.sign-up-link, .account{
+  font-size: 14px;
+  color: rgb(250, 160, 0);
+  text-align: center;
+}
 .left-content{
   display: flex;
   flex-direction: column;
