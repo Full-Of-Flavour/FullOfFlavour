@@ -38,7 +38,7 @@ body{
 }
 .left-content h3{
   font-weight: 700;
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
   text-align: center;
 }
 .right-content{
@@ -66,7 +66,7 @@ form{
   gap: 10px;
 }
 .right-content h1{
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
   font-weight: 600;
   vertical-align: top;
   width: 100%;
@@ -75,7 +75,7 @@ form{
   padding: 10px 0 10px 35px;
   width: 290px;
   border-radius: 3px;
-  border: 1px solid rgb(158, 158, 167);
+  border: 1px solid rgb(250, 160, 0);
   color:  rgb(158, 158, 167);
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -89,14 +89,14 @@ form{
 .username:focus, .email:focus, .password:focus{
   border: 1px solid rgb(22, 182, 102);
   outline: none;
-  box-shadow: 0px 0px 8px 0px  rgb(22, 182, 102);
+  box-shadow: 0px 0px 8px 0px  rgb(250, 160, 0);
   transition: .5s;
 }
 .email{
   padding: 10px 0 10px 35px;
   width: 88%;
   border-radius: 3px;
-  border: 1px solid rgb(158, 158, 167);
+  border: 1px solid rgb(250, 160, 0);
   color:  rgb(158, 158, 167);
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -105,7 +105,7 @@ form{
   padding: 10px 0 10px 35px;
   width: 88%;
   border-radius: 3px;
-  border: 1px solid rgb(158, 158, 167);
+  border: 1px solid rgb(250, 160, 0);
   color:  rgb(158, 158, 167);
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -125,11 +125,11 @@ form{
 }
 .forgot-password{
   font-size: 13px;
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
 }
 .forgot-password a{
   text-decoration: none;
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
 }
 .log-in-btn{
   width: 100%;
@@ -146,12 +146,12 @@ form{
 .sign-up-link{
   font-size: 14px;
   font-weight: bold;
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
   text-decoration: none;
   margin-top: 18px;
 }
 .log-in-btn:hover{
-  background: #0a4cfe;
+  background: #FAA000;
   transition: 0.5s ease-in-out;
 }
 .user{
@@ -160,7 +160,7 @@ form{
 }
 .sign-up-link, .account{
   font-size: 14px;
-  color: rgb(22, 182, 102);
+  color: rgb(250, 160, 0);
   text-align: center;
 }
 .input-box, .input-box-2{
